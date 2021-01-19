@@ -1,0 +1,13 @@
+{% extends 'base.jinja2' %}
+
+{% block subtitle %}Create Donation{% endblock %}
+
+{% block content %}
+	<form method="POST">
+		{% for message in get_flashed_messages() %}<p>{{ message }}</p>{% endfor %}
+		{% if error %}<p>{{ error }}</p>{% endif %}
+		<label for="name">Donor:</label><input id="name" type="text" name="name"><br>
+		<label for="value">Amount:</label><input id="value" type="number" name="value"><br>
+		<input type="submit" value="Add Donation">
+	</form>
+{% endblock %}
